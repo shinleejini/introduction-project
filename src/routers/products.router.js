@@ -10,7 +10,7 @@ productsRouter.post('/products', async (req, res, next) => {
     // DB에 저장하기
     const product = new Product({name, description, manager, password})
     let data = await product.save();
-    
+
     // 비밀번호 출력하지 않기
     data = {...data.toJSON(), password: undefined};
 
@@ -19,16 +19,24 @@ productsRouter.post('/products', async (req, res, next) => {
 });
 
 // 상품 목록 조회 (Read)
-productsRouter.get('/products', (req, res, next) => {
+productsRouter.get('/products', async (req, res, next) => {
     // DB에서 조회하기 (생성 일시 기준 내림차순 정렬)
+    const data = await Product.find().sort({createdAt: 'desc'}).exec()
+
     // 완료 메시지 반환하기
+    return res.status(200).json({status: 200, message: "상품 목록 조회에 성공했습니다.", data})
 });
 
 // 상품 상세 조회 (Read)
-productsRouter.get('/products/:id', (req, res, next) => {
+productsRouter.get('/products/:id', async (req, res, next) => {
     // 상품 아이디 파싱하기
+    const {id} = req.params
+
     // DB에서 조회하기
+    const data = await Product.findById(id).exec();
+
     // 완료 메시지 반환하기
+    return res.status(200).json({status: 200, message: "상품 상세 조회에 성공했습니다.", data})
 });
 
 // 상품 수정 (Update)
