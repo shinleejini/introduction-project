@@ -1,6 +1,6 @@
 import mongoose from 'mongoose';
-import { MONGODB_NAME } from '../constants/env.constant';
-import { MONGODB_URL } from '../constants/env.constant';
+import { MONGODB_NAME } from '../constants/env.constant.js';
+import { MONGODB_URL } from '../constants/env.constant.js';
 
 // TODO: .env 파일 사용을 위해서는 여기에 패키지 import가 필요합니다.
 
@@ -25,4 +25,4 @@ mongoose.connection.on('error', (err) => {
   console.error('MongoDB 연결 에러', err);
 });
 
-export default connect;
+export {connect};
