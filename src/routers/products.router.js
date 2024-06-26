@@ -1,10 +1,15 @@
 import express from 'express';
 import { Product } from '../schemas/product.schema.js';
+import { createProductValidator } from '../middlewares/validators/create-product.validator.middleware.js';
+import { deletePasswordValidator } from '../middlewares/validators/delete-password.validator.middleware.js';
+import { updateProductValidator } from '../middlewares/validators/update-product.validator.middleware.js';
+
 const productsRouter = express.Router();
 
 // 상품 생성 (Create)
-productsRouter.post('/products', async (req, res, next) => {
+productsRouter.post('/products', createProductValidator, async (req, res, next) => {
     try {
+
     // 상품 정보 파싱하기
     const { name, description, manager, password } = req.body;
 
@@ -65,7 +70,8 @@ productsRouter.get('/products/:id', async (req, res, next) => {
 });
 
 // 상품 수정 (Update)
-productsRouter.put('/products/:id', async (req, res, next) => {
+productsRouter.put('/products/:id',
+    updateProductValidator, async (req, res, next) => {
     try {
     // 상품 아이디 파싱하기
     const {id} = req.params;
@@ -105,7 +111,7 @@ productsRouter.put('/products/:id', async (req, res, next) => {
 });
 
 // 상품 삭제 (Delete)
-productsRouter.delete('/products/:id', async (req, res, next) => {
+productsRouter.delete('/products/:id', deletePasswordValidator, async (req, res, next) => {
     try {
     // 상품 아이디, 비밀번호 파싱하기
     const {id} = req.params;
