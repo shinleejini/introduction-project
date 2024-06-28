@@ -32,12 +32,12 @@ cd INTRODUCTION
 - 상품 수정 API
 - 상품 삭제 API
 
-(\src\routers\products.router.js)
+[code](\src\routers\products.router.js)
 
 ## 개발자
 
 신이지니
-ex. [@Github](https://github.com/shinleejini)
+ex. [Github](https://github.com/shinleejini)
 
 ## 어려웠던 점
 
