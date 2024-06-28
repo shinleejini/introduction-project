@@ -2,56 +2,43 @@
 
 Node.js와 Express.js를 활용한 나만의 내배캠 장터 백엔드 서버 만들기
 
-## 시작 가이
+## 시작 가이드
 
-### Dependencies
+### 종속성
 
-* Windows 11
+- Windows 11
+- Node.js
 
-### Installing
+### 프로그램 실행
 
-* How/where to download your program
-* Any modifications needed to be made to files/folders
-
-### Executing program
-
-* How to run the program
-* Step-by-step bullets
 ```
-code blocks for commands
+git clone https://github.com/shinleejini/introduction-project.git
+cd INTRODUCTION
 ```
 
-## Help
+### 기술 스택
 
-Any advise for common problems or issues.
-```
-command to run if program contains helper info
-```
+- 웹 프레임워크: Express.js
+- 패키지 매니저: yarn
+- 모듈 시스템: ESM(ES6)
+- 데이터 베이스: MongoDB Atlas
+- ODM: mongoose
 
-## Authors
+## 주요 기능
 
-Contributors names and contact info
+- 상품 등록 API
+- 상품 목록 조회 API
+- 상품 상세 조회 API
+- 상품 수정 API
+- 상품 삭제 API
 
-ex. Dominique Pizzie  
-ex. [@DomPizzie](https://twitter.com/dompizzie)
+(\src\routers\products.router.js)
 
-## Version History
+## 개발자
 
-* 0.2
-    * Various bug fixes and optimizations
-    * See [commit change]() or See [release history]()
-* 0.1
-    * Initial Release
+신이지니
+ex. [@Github](https://github.com/shinleejini)
 
-## License
+## 어려웠던 점
 
-This project is licensed under the [NAME HERE] License - see the LICENSE.md file for details
-
-## Acknowledgments
-
-Inspiration, code snippets, etc.
-* [awesome-readme](https://github.com/matiassingers/awesome-readme)
-* [PurpleBooth](https://gist.github.com/PurpleBooth/109311bb0361f32d87a2)
-* [dbader](https://github.com/dbader/readme-template)
-* [zenorocha](https://gist.github.com/zenorocha/4526327)
-* [fvcproductions](https://gist.github.com/fvcproductions/1bfc2d4aecb01a834b46)
+.
